@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.hotel.controller.EditBookingController"
+    spacing="12"
+    alignment="TOP_LEFT"
+    prefWidth="480"
+    prefHeight="520"
+    style="-fx-background-color: white;">
+
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24" />
+    </padding>
+
+    <Label text="CHỈNH SỬA ĐẶT PHÒNG"
+        style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+    <Label text="Mã đặt phòng" />
+    <TextField fx:id="bookingIdField"
+        editable="false" />
+
+    <Label text="Tên khách hàng" />
+    <TextField fx:id="customerNameField"
+        promptText="Nhập tên khách hàng" />
+
+    <Label text="Chọn phòng" />
+    <ComboBox fx:id="roomComboBox"
+        prefWidth="420" />
+
+    <Label text="Ngày nhận phòng" />
+    <DatePicker fx:id="checkInDatePicker"
+        prefWidth="420" />
+
+    <Label text="Ngày trả phòng" />
+    <DatePicker fx:id="checkOutDatePicker"
+        prefWidth="420" />
+
+    <Label fx:id="totalPriceLabel"
+        text="Tổng tiền: 0 ₫"
+        style="-fx-font-size: 17px; -fx-font-weight: bold;" />
+
+    <Label fx:id="messageLabel"
+        textFill="#dc3545"
+        wrapText="true" />
+
+    <HBox spacing="12">
+        <Button text="Lưu thay đổi"
+            onAction="#handleSaveChanges"
+            style="-fx-background-color: #102D30;
+                       -fx-text-fill: white;" />
+
+        <Button text="Đóng"
+            onAction="#handleClose" />
+    </HBox>
+
+</VBox>

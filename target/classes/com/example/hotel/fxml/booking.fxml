@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.hotel.controller.BookingController"
+    spacing="20"
+    styleClass="main-content"
+    stylesheets="@../css/dashboard.css, @../css/booking.css">
+
+    <Label text="Quản lý đặt phòng"
+        styleClass="page-title" />
+
+    <VBox spacing="15">
+        <Label text="Tạo đặt phòng mới" />
+        <Label text="Chọn khách hàng" />
+
+        <ComboBox fx:id="customerComboBox"
+            promptText="Chọn khách hàng đã đăng ký"
+            maxWidth="400" />
+
+        <Label text="Tên khách hàng" />
+
+        <TextField fx:id="customerNameField"
+            promptText="Tên khách hàng sẽ tự hiển thị"
+            maxWidth="400"
+            editable="false" />
+        <ComboBox fx:id="roomComboBox" maxWidth="400"
+            promptText="Chọn phòng trống" />
+        <DatePicker fx:id="checkInDatePicker" maxWidth="400"
+            promptText="Ngày nhận phòng" />
+        <DatePicker fx:id="checkOutDatePicker" maxWidth="400"
+            promptText="Ngày trả phòng" />
+        <Label fx:id="numberOfNightsLabel"
+            text="Số đêm lưu trú: 0" />
+        <Label fx:id="roomStatusLabel"
+            text="Vui lòng chọn phòng và ngày lưu trú" />
+        <Label fx:id="totalPriceLabel"
+            text="Tổng tiền dự kiến: 0 ₫" />
+        <HBox spacing="12">
+            <Button fx:id="saveBookingButton"
+                text="Lưu đặt phòng"
+                onAction="#handleSaveBooking"
+                disable="true" />
+
+            <Button text="Làm mới"
+                onAction="#handleResetForm" />
+        </HBox>
+
+        <Label fx:id="messageLabel" />
+    </VBox>
+
+</VBox>

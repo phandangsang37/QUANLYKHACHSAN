@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.hotel.controller.ReportController"
+    spacing="18"
+    style="-fx-background-color: #f4f7f7;">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25" />
+    </padding>
+
+    <Label text="Báo cáo doanh thu"
+        style="-fx-font-size: 26px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #102D30;" />
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label text="Từ ngày:" />
+        <DatePicker fx:id="fromDatePicker" />
+
+        <Label text="Đến ngày:" />
+        <DatePicker fx:id="toDatePicker" />
+
+        <Button text="Xem báo cáo"
+            onAction="#handleViewReport" />
+    </HBox>
+
+    <HBox spacing="20">
+
+        <VBox spacing="8"
+            style="-fx-background-color: white;
+                     -fx-padding: 20;
+                     -fx-background-radius: 12;">
+            <Label text="Tổng doanh thu" />
+            <Label fx:id="totalRevenueLabel"
+                text="0 ₫"
+                style="-fx-font-size: 24px;
+                          -fx-font-weight: bold;" />
+        </VBox>
+
+        <VBox spacing="8"
+            style="-fx-background-color: white;
+                     -fx-padding: 20;
+                     -fx-background-radius: 12;">
+            <Label text="Đơn đã trả phòng" />
+            <Label fx:id="completedBookingsLabel"
+                text="0"
+                style="-fx-font-size: 24px;
+                          -fx-font-weight: bold;" />
+        </VBox>
+
+    </HBox>
+
+    <Label fx:id="messageLabel"
+        wrapText="true"
+        style="-fx-text-fill: #dc3545;" />
+
+    <BarChart fx:id="revenueChart"
+        title="Doanh thu theo ngày"
+        animated="false"
+        categoryGap="8"
+        VBox.vgrow="ALWAYS">
+
+        <xAxis>
+            <CategoryAxis label="Ngày trả phòng" />
+        </xAxis>
+
+        <yAxis>
+            <NumberAxis label="Doanh thu (VNĐ)" />
+        </yAxis>
+
+    </BarChart>
+
+</VBox>

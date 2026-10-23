@@ -1,0 +1,37 @@
+.invoice-container {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 30px;
+    -fx-spacing: 20px;
+}
+
+.invoice-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #102D30;
+}
+
+.invoice-subtitle {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #50686A;
+}
+
+.invoice-total {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #102D30;
+}
+
+.invoice-close-button {
+    -fx-background-color: #102D30;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px 25px;
+    -fx-cursor: hand;
+}
+
+.invoice-close-button:hover {
+    -fx-background-color: #20494F;
+}

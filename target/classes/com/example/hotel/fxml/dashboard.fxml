@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    stylesheets="@../css/dashboard.css"
+    fx:controller="com.example.hotel.controller.DashboardController"
+    fx:id="mainLayout">
+    <left>
+        <VBox spacing="15" prefWidth="240" styleClass="sidebar">
+            <Label text="SDZ Hotel" styleClass="sidebar-title" />
+            <Button text="Tổng quan" styleClass="sidebar-button" onAction="#handleOverview" />
+            <Button text="Đặt phòng" styleClass="sidebar-button" onAction="#handleBooking" />
+            <Button text="Phòng" styleClass="sidebar-button" onAction="#handleRoom" />
+            <Button text="Khách hàng" styleClass="sidebar-button" onAction="#handleCustomer" />
+            <Button fx:id="reportButton" text="Báo cáo" styleClass="sidebar-button"
+                onAction="#handleReport" />
+            <Button fx:id="accountButton"
+                text="Tài khoản"
+                styleClass="sidebar-button"
+                onAction="#handleAccount" />
+            <Button text="Đăng xuất"
+                styleClass="sidebar-button"
+                onAction="#handleLogout" />
+        </VBox>
+
+    </left>
+    <center>
+        <VBox spacing="20" styleClass="main-content">
+            <Label text="Tổng quan hôm nay"
+                styleClass="page-title" />
+            <HBox spacing="15">
+                <VBox spacing="10"
+                    styleClass="stat-card"
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="Infinity">
+                    <Label text="Công suất phòng"
+                        styleClass="stat-title" />
+                    <Label fx:id="occupancyLabel" text="0%"
+                        styleClass="stat-value" />
+                    <Label fx:id="occupancyDetailLabel" text="39 / 50 phòng đang có khách"
+                        styleClass="stat-description" />
+                </VBox>
+                <VBox spacing="10"
+                    styleClass="stat-card"
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="Infinity">
+                    <Label text="Nhận phòng hôm nay"
+                        styleClass="stat-title" />
+                    <Label fx:id="checkInTodayLabel" text="2"
+                        styleClass="stat-value" />
+                    <Label text="Đang chờ xử lý"
+                        styleClass="stat-description" />
+                </VBox>
+                <VBox spacing="10"
+                    styleClass="stat-card"
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="Infinity">
+                    <Label text="Trả phòng hôm nay"
+                        styleClass="stat-title" />
+                    <Label fx:id="checkOutTodayLabel" text="2"
+                        styleClass="stat-value" />
+                    <Label text="Trước 12:00"
+                        styleClass="stat-description" />
+                </VBox>
+                <VBox spacing="10"
+                    styleClass="stat-card"
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="Infinity">
+                    <Label text="Doanh thu hôm nay"
+                        styleClass="stat-title" />
+                    <Label fx:id="revenueTodayLabel" text="48,2 tr VNĐ"
+                        styleClass="stat-value" />
+                    <Label text="Đã thanh toán"
+                        styleClass="stat-description" />
+                </VBox>
+            </HBox>
+            <VBox spacing="15" styleClass="booking-section">
+
+                <Label text="Danh sách đặt phòng"
+                    styleClass="booking-title" />
+                <TextField fx:id="searchBookingField"
+                    promptText="Tìm theo mã đặt phòng hoặc tên khách hàng..."
+                    maxWidth="400" />
+                <ComboBox fx:id="statusFilterComboBox"
+                    promptText="Lọc theo trạng thái"
+                    prefWidth="200" />
+                <Button text="Xóa bộ lọc"
+                    onAction="#handleResetBookingFilters" />
+                <Label fx:id="bookingCountLabel"
+                    text="Hiển thị: 0 / 0 đơn đặt phòng" />
+                <TableView fx:id="bookingTable" prefHeight="350">
+                    <columns>
+                        <TableColumn fx:id="bookingIdColumn"
+                            text="Mã đặt phòng" />
+                        <TableColumn fx:id="customerNameColumn"
+                            text="Khách hàng" />
+                        <TableColumn fx:id="roomNameColumn"
+                            text="Phòng" />
+                        <TableColumn fx:id="stayDateColumn"
+                            text="Ngày ở" />
+                        <TableColumn fx:id="totalPriceColumn"
+                            text="Tổng tiền" />
+                        <TableColumn fx:id="statusColumn"
+                            text="Trạng thái" />
+                        <TableColumn fx:id="actionColumn"
+                            text="Thao tác" />
+                    </columns>
+                </TableView>
+
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

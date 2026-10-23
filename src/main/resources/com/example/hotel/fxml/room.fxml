@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.hotel.controller.RoomController"
+    spacing="20"
+    styleClass="main-content"
+    stylesheets="@../css/dashboard.css">
+
+    <Label text="Quản lý phòng"
+        styleClass="page-title" />
+    <VBox spacing="12">
+
+        <Label text="Thêm phòng mới" />
+
+        <TextField fx:id="roomNumberField"
+            promptText="Nhập số phòng"
+            maxWidth="400" />
+
+        <ComboBox fx:id="roomTypeComboBox"
+            promptText="Chọn loại phòng"
+            maxWidth="400" />
+
+        <TextField fx:id="priceField"
+            promptText="Giá mỗi đêm (VNĐ)"
+            maxWidth="400" />
+
+        <HBox spacing="12">
+            <Button fx:id="addRoomButton" text="Thêm phòng"
+                onAction="#handleAddRoom" />
+
+            <Button fx:id="updateRoomButton" text="Cập nhật phòng"
+                onAction="#handleUpdateRoom" />
+
+            <Button fx:id="deleteRoomButton" text="Xóa phòng"
+                onAction="#handleDeleteRoom" />
+        </HBox>
+
+        <Label fx:id="messageLabel" />
+
+    </VBox>
+    <TableView fx:id="roomTable"
+        prefHeight="400">
+
+        <columns>
+            <TableColumn fx:id="roomNumberColumn"
+                text="Số phòng"
+                prefWidth="150" />
+
+            <TableColumn fx:id="roomTypeColumn"
+                text="Loại phòng"
+                prefWidth="200" />
+
+            <TableColumn fx:id="priceColumn"
+                text="Giá mỗi đêm"
+                prefWidth="200" />
+        </columns>
+
+    </TableView>
+
+</VBox>

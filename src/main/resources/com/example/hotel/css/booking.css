@@ -1,0 +1,23 @@
+.message-error {
+    -fx-text-fill: #dc3545;
+    -fx-font-weight: bold;
+}
+
+.message-success {
+    -fx-text-fill: #198754;
+    -fx-font-weight: bold;
+}
+
+.room-available {
+    -fx-text-fill: #198754;
+    -fx-font-weight: bold;
+}
+
+.room-unavailable {
+    -fx-text-fill: #dc3545;
+    -fx-font-weight: bold;
+}
+
+.room-unknown {
+    -fx-text-fill: #6c757d;
+}

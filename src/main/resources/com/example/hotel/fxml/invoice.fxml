@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.example.hotel.controller.InvoiceController"
+    stylesheets="@../css/invoice.css"
+    styleClass="invoice-container"
+    alignment="TOP_CENTER"
+    spacing="15"
+    prefWidth="500"
+    prefHeight="350">
+
+    <Label text="SDZ Hotel" styleClass="invoice-title" />
+
+    <Label text="HÓA ĐƠN THANH TOÁN" styleClass="invoice-subtitle" />
+    <HBox spacing="20" alignment="CENTER_LEFT" prefWidth="400">
+        <Label text="Mã đặt phòng:" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="bookingIdLabel" />
+    </HBox>
+    <HBox spacing="20" alignment="CENTER_LEFT" prefWidth="400">
+        <Label text="Tên khách hàng:" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="customerNameLabel" />
+    </HBox>
+    <HBox spacing="20" alignment="CENTER_LEFT" prefWidth="400">
+        <Label text="Tên phòng:" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="roomNameLabel" />
+    </HBox>
+    <HBox spacing="20" alignment="CENTER_LEFT" prefWidth="400" styleClass="invoice-total">
+        <Label text="Tổng tiền:" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="totalPriceLabel" />
+    </HBox>
+    <Button text="Đóng hóa đơn"
+        styleClass="invoice-close-button"
+        onAction="#handleClose" />
+
+
+</VBox>
